@@ -45,6 +45,8 @@ if(true){
 
                     $new_created = $current_time - $ready_time;
 
+                    $new_created = date("Y-m-d H:i:s",$new_created);
+
                     $mysql->query("UPDATE pipes SET created='$new_created' WHERE id='$pipe_active'");
                 }else{
                     $new_created = $current_time - $ready_time;
@@ -70,13 +72,13 @@ if(true){
                     }
                 }
 
-                var_dump($pipe_active);
-
                 if($pipe_active != false){
                     $query = $mysql->query("SELECT * FROM pipes WHERE id='$pipe_active'");
                     $pipe_data = $query->fetch_assoc();
 
                     $new_created = $current_time - $dying_time;
+
+                    $new_created = date("Y-m-d H:i:s",$new_created);
 
                     $mysql->query("UPDATE pipes SET created='$new_created' WHERE id='$pipe_active'");
                 }else{
@@ -101,6 +103,8 @@ if(true){
 
                 if($pipe_active != false){
                     $new_time = $current_time - $end_time;
+
+                    $new_time = date("Y-m-d H:i:s",$new_time);
 
                     $query = $mysql->query("UPDATE pipes SET created='$new_time' WHERE id='$pipe_active'");
 
