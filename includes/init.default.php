@@ -6,3 +6,5 @@ $mysql_db = "";
 
 $mysql = new mysqli($mysql_host,$mysql_user,$mysql_password,$mysql_db);
 
+$mysql->query("SET NAMES utf8");
+
