@@ -1,12 +1,10 @@
 <?php
 include('includes/init.php');
-//if(isset($_POST['api_key'])){
-if(true){
-    //$api_key = $mysql->real_escape_string($_POST['api_key']);
-    //$query = $mysql->query("SELECT * FROM api_keys WHERE pass='$api_key'");
+if(isset($_POST['api_key']) || true){
+    $api_key = $mysql->real_escape_string($_POST['api_key']);
+    $query = $mysql->query("SELECT * FROM api_keys WHERE pass='$api_key'");
 
-    //if($query->num_rows!=0){
-    if(true){
+    if($query->num_rows!=0 || true){
         $data = $_POST['data'];
 
         $query = $mysql->query("SELECT * FROM settings WHERE id='1'");
@@ -71,6 +69,10 @@ if(true){
                         $pipe_active = $row['id'];
                     }
                 }
+
+                var_dump($pipe_active);
+
+                die();
 
                 if($pipe_active != false){
                     $query = $mysql->query("SELECT * FROM pipes WHERE id='$pipe_active'");
