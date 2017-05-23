@@ -23,12 +23,11 @@ if(true){
 
         $current_tobacco = $location_data['tobacco_type'];
 
-
-
         switch($data){
             case "yes":
             {
-                $query = $mysql->query("SELECT * FROM pipes WHERE location='1'");
+                echo "asd";
+                $query = $mysql->query("SELECT * FROM pipes WHERE location_id='1'");
 
                 $pipe_active = false;
 
@@ -59,7 +58,7 @@ if(true){
 
             case "maybe":
             {
-                $query = $mysql->query("SELECT * FROM pipes WHERE location='1'");
+                $query = $mysql->query("SELECT * FROM pipes WHERE location_id='1'");
 
                 $pipe_active = false;
 
@@ -88,7 +87,7 @@ if(true){
 
             case "no":
             {
-                $query = $mysql->query("SELECT * FROM pipes WHERE location='1'");
+                $query = $mysql->query("SELECT * FROM pipes WHERE location_id='1'");
 
                 $pipe_active = false;
 
