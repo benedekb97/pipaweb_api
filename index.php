@@ -53,8 +53,8 @@ if(isset($_POST['api_key']) || true){
 
                     $mysql->query("INSERT INTO pipes (type,created,created_by,location_id,created_static) VALUES ('$current_tobacco','$new_created','1020','1',NOW())");
                 }
-                break;
             }
+                break;
 
             case "maybe":
             {
@@ -72,8 +72,6 @@ if(isset($_POST['api_key']) || true){
 
                 var_dump($pipe_active);
 
-                die();
-
                 if($pipe_active != false){
                     $query = $mysql->query("SELECT * FROM pipes WHERE id='$pipe_active'");
                     $pipe_data = $query->fetch_assoc();
@@ -86,8 +84,8 @@ if(isset($_POST['api_key']) || true){
                 }else{
                     $mysql->query("INSERT INTO pipes (type,created,created_by,location_id,created_static) VALUES ('$current_tobacco',NOW(),'1020','1',NOW())");
                 }
-                break;
             }
+                break;
 
             case "no":
             {
@@ -112,6 +110,7 @@ if(isset($_POST['api_key']) || true){
 
                 }
             }
+                break;
         }
     }
 }
